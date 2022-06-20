@@ -3,7 +3,7 @@ class Solution(object):
         
         def dfs(csum, index, path):
             """
-            csum: 초기값을 target으로 초기화한 후 path 갱신될 때마다 마이너스
+            csum: 초기값을 target으로 초기화한 후 path 갱신될 때마다 차감
             index: 부모노드(자기자신)부터 시작할 수 있도록 넘겨주는 인덱스
             path: 현재까지의 조합
             """
