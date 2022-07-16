@@ -15,8 +15,8 @@ class Solution(object):
         # 노드에 도착한 시간을 저장할 dictionary
         arrived = defaultdict(int)
         
-        # [(소요시간, 시작노드)]
-        # 소요시간을 기준으로 heapq에서 데이터를 뽑아냄
+        # [(다음(next) 노드까지 총 소요시간, 다음(next) 노드)]
+        # 총 소요시간이 짧은 것부터 heapq에서 뽑아서 탐색함
         queue = [(0, k)]
         
         while queue:
@@ -27,7 +27,7 @@ class Solution(object):
                 # 다음으로 이동할 수 있는 노드 탐색
                 for _next, delay in graph[node]:
                     arrive_time = time + delay
-                    heapq.heappush(queue, (arrive_time, _next))
+                    heapq.heappush(queue, (arrive_time, _next)) # (next까지 총시간, next 노드)
         
         # 1. 모든 노드가 신호를 받았는가?
         if len(arrived) == n:
