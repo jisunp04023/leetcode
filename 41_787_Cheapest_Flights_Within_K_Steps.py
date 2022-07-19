@@ -27,7 +27,7 @@ class Solution(object):
             
             # 경유할 수 있는 노드 수가 남아있고,
             # 경우 1 -> 방문하지 않은 노드라면 남은 경유지 수 기록
-            # 경우 2 -> 방문한 노드지만 남아있는 경유지의 개수가 기록된 것 보다 더 많으면 새로 값을 변경
+            # 경우 2 -> 방문한 노드지만 남아있는 경유지의 개수가 기록된 것 보다 더 많으면 새로운 경로 있을 수 있으므로 cnt값 더 큰 수로 갱신
             if cnt >= 0 and (node not in visited or visited[node] < cnt):
                 visited[node] = cnt # 방문한 노드를 기록
                 for v, w in graph[node]:
